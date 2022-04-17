@@ -5,7 +5,7 @@ go 1.18
 require (
 	github.com/go-kit/kit v0.12.0
 	github.com/golang/protobuf v1.5.2
-	github.com/ttlzx/delinkcious v0.0.0-20220103094143-701d7f6061e1
+	github.com/ttlzx/delinkcious v0.0.0-20220417032022-010f15e798d0
 	google.golang.org/grpc v1.43.0
 )
 
