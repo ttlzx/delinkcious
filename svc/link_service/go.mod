@@ -7,6 +7,7 @@ require (
 	github.com/gorilla/mux v1.8.0
 	github.com/opentracing/opentracing-go v1.2.0
 	github.com/prometheus/client_golang v1.11.0
+	github.com/ttlzx/delinkcious v0.0.0-20220417032022-010f15e798d0
 	github.com/uber/jaeger-client-go v2.30.0+incompatible
 )
 

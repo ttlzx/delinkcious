@@ -64,11 +64,11 @@ func main() {
 
 	time.Sleep(time.Second * 1)
 	fmt.Println("Sending OnLinkAdded event...")
-	sender.OnLinkAdded("gigi", &om.Link{Url: "http://example.org", Title: "Example"})
+	sender.OnLinkAdded("ttlzx", &om.Link{Url: "http://example.org", Title: "Example"})
 	time.Sleep(time.Second * 1)
 
 	fmt.Println("Fetching news...")
-	res, err := cli.GetNews(om.GetNewsRequest{Username: "gigi"})
+	res, err := cli.GetNews(om.GetNewsRequest{Username: "ttlzx"})
 	Check(err)
 
 	for _, e := range res.Events {

@@ -197,18 +197,18 @@ def install_nuclio():
     # Create an image pull secret, so Nuclio can deploy functions to our cluster.
     dockerhub_password = os.environ.get('DOCKERHUB_PASSWORD', getpass('Enter Dockerhub password: '))
     run(f"""kubectl create secret docker-registry registry-credentials -n nuclio
-               --docker-username g1g1
+               --docker-username ttlzx
                --docker-password {dockerhub_password}
                --docker-server registry.hub.docker.com
-               --docker-email the.gigi@gmail.com""")
+               --docker-email the.ttlzx@gmail.com""")
 
 
 def deploy_link_checker():
     """ Deploy the link checker nuclio function"""
     orig_dir = os.getcwd()
     os.chdir('../../fun/link_checker')
-    registry = 'gcr.io' if platform == 'gke' else 'g1g1'
-    run('nuctl deploy link-checker -n nuclio -p . --registry g1g1')
+    registry = 'gcr.io' if platform == 'gke' else 'ttlzx'
+    run('nuctl deploy link-checker -n nuclio -p . --registry ttlzx')
     os.chdir(orig_dir)
 
 

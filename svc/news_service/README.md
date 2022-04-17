@@ -18,7 +18,7 @@ It uses a multi-stage [Dockerfile](Dockerfile) to generate a lean and mean image
 ## Build Docker image
 
 ```
-$ docker build . -t g1g1/delinkcious-news-manager:${VERSION}
+$ docker build . -t ttlzx/delinkcious-news-manager:${VERSION}
 ```
 
 ## Push to Registry
@@ -32,7 +32,7 @@ $ docker login
 Then push your image:
 
 ```
-$ docker push g1g1/delinkcious-news-manager:${VERSION}
+$ docker push ttlzx/delinkcious-news-manager:${VERSION}
 ```
 
 ## Deploy to active Kubernetes cluster

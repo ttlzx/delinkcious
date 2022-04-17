@@ -19,7 +19,7 @@ var _ = Describe("In-memory link manager tests", func() {
 	It("should get news", func() {
 		// No news initially
 		r := om.GetNewsRequest{
-			Username: "gigi",
+			Username: "ttlzx",
 		}
 		res, err := newsManager.GetNews(r)
 		Ω(err).Should(BeNil())
@@ -30,7 +30,7 @@ var _ = Describe("In-memory link manager tests", func() {
 			Url:   "http://123.com",
 			Title: "123",
 		}
-		newsManager.OnLinkAdded("gigi", link)
+		newsManager.OnLinkAdded("ttlzx", link)
 		res, err = newsManager.GetNews(r)
 		Ω(err).Should(BeNil())
 		Ω(res.Events).Should(HaveLen(1))
@@ -40,7 +40,7 @@ var _ = Describe("In-memory link manager tests", func() {
 
 		// Update a link
 		link.Title = "New Title"
-		newsManager.OnLinkUpdated("gigi", link)
+		newsManager.OnLinkUpdated("ttlzx", link)
 		res, err = newsManager.GetNews(r)
 		Ω(err).Should(BeNil())
 		Ω(res.Events).Should(HaveLen(2))
@@ -53,7 +53,7 @@ var _ = Describe("In-memory link manager tests", func() {
 		Ω(event.Url).Should(Equal("http://123.com"))
 
 		// Delete a link
-		newsManager.OnLinkDeleted("gigi", link.Url)
+		newsManager.OnLinkDeleted("ttlzx", link.Url)
 		res, err = newsManager.GetNews(r)
 		Ω(err).Should(BeNil())
 		Ω(res.Events).Should(HaveLen(3))

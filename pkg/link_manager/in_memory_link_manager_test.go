@@ -26,7 +26,7 @@ var _ = Describe("In-memory link manager tests", func() {
 	It("should add and get links", func() {
 		// No links initially
 		r := om.GetLinksRequest{
-			Username: "gigi",
+			Username: "ttlzx",
 		}
 		res, err := linkManager.GetLinks(r)
 		Ω(err).Should(BeNil())
@@ -34,7 +34,7 @@ var _ = Describe("In-memory link manager tests", func() {
 
 		// Add a link
 		r2 := om.AddLinkRequest{
-			Username: "gigi",
+			Username: "ttlzx",
 			Url:      "https://golang.org/",
 			Title:    "Golang",
 			Tags:     map[string]bool{"programming": true},
@@ -60,7 +60,7 @@ var _ = Describe("In-memory link manager tests", func() {
 	It("should update a link", func() {
 		// Add a link
 		r := om.AddLinkRequest{
-			Username: "gigi",
+			Username: "ttlzx",
 			Url:      "https://golang.org/",
 			Title:    "Golang",
 			Tags:     map[string]bool{"programming": true},
@@ -77,7 +77,7 @@ var _ = Describe("In-memory link manager tests", func() {
 		err = linkManager.UpdateLink(r2)
 		Ω(err).Should(BeNil())
 
-		r3 := om.GetLinksRequest{Username: "gigi"}
+		r3 := om.GetLinksRequest{Username: "ttlzx"}
 		res, err := linkManager.GetLinks(r3)
 		Ω(err).Should(BeNil())
 		Ω(res.Links).Should(HaveLen(1))
@@ -89,7 +89,7 @@ var _ = Describe("In-memory link manager tests", func() {
 	It("should delete a link", func() {
 		// Add a link
 		r := om.AddLinkRequest{
-			Username: "gigi",
+			Username: "ttlzx",
 			Url:      "https://golang.org/",
 			Title:    "Golang",
 			Tags:     map[string]bool{"programming": true},
@@ -98,13 +98,13 @@ var _ = Describe("In-memory link manager tests", func() {
 		Ω(err).Should(BeNil())
 
 		// Should have 1 link
-		r2 := om.GetLinksRequest{Username: "gigi"}
+		r2 := om.GetLinksRequest{Username: "ttlzx"}
 		res, err := linkManager.GetLinks(r2)
 		Ω(err).Should(BeNil())
 		Ω(res.Links).Should(HaveLen(1))
 
 		// Delete the link
-		err = linkManager.DeleteLink("gigi", r.Url)
+		err = linkManager.DeleteLink("ttlzx", r.Url)
 		Ω(err).Should(BeNil())
 
 		// There should be no more links
@@ -116,7 +116,7 @@ var _ = Describe("In-memory link manager tests", func() {
 	It("should update link status when receiving OnLinkChecked() calls", func() {
 		// Add a link
 		r := om.AddLinkRequest{
-			Username: "gigi",
+			Username: "ttlzx",
 			Url:      "https://golang.org/",
 			Title:    "Golang",
 			Tags:     map[string]bool{"programming": true},
@@ -125,7 +125,7 @@ var _ = Describe("In-memory link manager tests", func() {
 		Ω(err).Should(BeNil())
 
 		// Should have 1 link in pending status
-		r2 := om.GetLinksRequest{Username: "gigi"}
+		r2 := om.GetLinksRequest{Username: "ttlzx"}
 		res, err := linkManager.GetLinks(r2)
 		Ω(err).Should(BeNil())
 		Ω(res.Links).Should(HaveLen(1))
@@ -133,7 +133,7 @@ var _ = Describe("In-memory link manager tests", func() {
 
 		// Call OnLinkChecked() with valid status on link manager (after type asserting to LinkCheckerEvents)
 		linkCheckSink := linkManager.(om.LinkCheckerEvents)
-		linkCheckSink.OnLinkChecked("gigi", r.Url, om.LinkStatusValid)
+		linkCheckSink.OnLinkChecked("ttlzx", r.Url, om.LinkStatusValid)
 
 		// The link should have valid status
 		res, err = linkManager.GetLinks(r2)
@@ -142,7 +142,7 @@ var _ = Describe("In-memory link manager tests", func() {
 		Ω(res.Links[0].Status).Should(Equal(om.LinkStatusValid))
 
 		// Call OnLinkChecked() with valid status again
-		linkCheckSink.OnLinkChecked("gigi", r.Url, om.LinkStatusValid)
+		linkCheckSink.OnLinkChecked("ttlzx", r.Url, om.LinkStatusValid)
 
 		// The link should still have valid status
 		res, err = linkManager.GetLinks(r2)
@@ -151,7 +151,7 @@ var _ = Describe("In-memory link manager tests", func() {
 		Ω(res.Links[0].Status).Should(Equal(om.LinkStatusValid))
 
 		// Call OnLinkChecked() with invalid status
-		linkCheckSink.OnLinkChecked("gigi", r.Url, om.LinkStatusInvalid)
+		linkCheckSink.OnLinkChecked("ttlzx", r.Url, om.LinkStatusInvalid)
 		// The link should have invalid status now
 		res, err = linkManager.GetLinks(r2)
 		Ω(err).Should(BeNil())

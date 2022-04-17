@@ -8,7 +8,7 @@ for f in yaml_files:
 # Get service name
 name = str(local("""python -c 'import os; print("-".join(os.getcwd().split("/")[-1].split("_")[:-1]))'"""))[:-1]
 
-docker_build('g1g1/delinkcious-' + name, '.', dockerfile='Dockerfile.dev')
+docker_build('ttlzx/delinkcious-' + name, '.', dockerfile='Dockerfile.dev')
 
 
 

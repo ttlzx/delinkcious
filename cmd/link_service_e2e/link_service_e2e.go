@@ -63,33 +63,33 @@ func main() {
 	cli, err := link_manager_client.NewClient("localhost:8080")
 	Check(err)
 
-	links, err := cli.GetLinks(om.GetLinksRequest{Username: "gigi"})
+	links, err := cli.GetLinks(om.GetLinksRequest{Username: "ttlzx"})
 	Check(err)
-	log.Print("gigi's links:", links)
+	log.Print("ttlzx's links:", links)
 
-	err = cli.AddLink(om.AddLinkRequest{Username: "gigi",
+	err = cli.AddLink(om.AddLinkRequest{Username: "ttlzx",
 		Url:   "https://github.com/ttlzx",
 		Title: "Gigi on Github",
 		Tags:  map[string]bool{"programming": true}})
 	Check(err)
-	links, err = cli.GetLinks(om.GetLinksRequest{Username: "gigi"})
+	links, err = cli.GetLinks(om.GetLinksRequest{Username: "ttlzx"})
 	Check(err)
-	log.Print("gigi's links:", links)
+	log.Print("ttlzx's links:", links)
 
-	err = cli.UpdateLink(om.UpdateLinkRequest{Username: "gigi",
+	err = cli.UpdateLink(om.UpdateLinkRequest{Username: "ttlzx",
 		Url:         "https://github.com/ttlzx",
 		Description: "Most of my open source code is here"},
 	)
 
 	Check(err)
-	links, err = cli.GetLinks(om.GetLinksRequest{Username: "gigi"})
+	links, err = cli.GetLinks(om.GetLinksRequest{Username: "ttlzx"})
 	Check(err)
-	log.Print("gigi's links:", links)
+	log.Print("ttlzx's links:", links)
 
-	err = cli.DeleteLink("gigi", "https://github.com/ttlzx")
+	err = cli.DeleteLink("ttlzx", "https://github.com/ttlzx")
 	Check(err)
 	Check(err)
-	links, err = cli.GetLinks(om.GetLinksRequest{Username: "gigi"})
+	links, err = cli.GetLinks(om.GetLinksRequest{Username: "ttlzx"})
 	Check(err)
-	log.Print("gigi's links:", links)
+	log.Print("ttlzx's links:", links)
 }

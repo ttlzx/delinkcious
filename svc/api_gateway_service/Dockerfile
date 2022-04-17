@@ -1,5 +1,5 @@
-FROM g1g1/delinkcious-python-flask-grpc:0.1
-MAINTAINER Gigi Sayfan "the.gigi@gmail.com"
+FROM ttlzx/delinkcious-python-flask-grpc:0.1
+MAINTAINER Gigi Sayfan "the.ttlzx@gmail.com"
 COPY . /api_gateway_service
 WORKDIR /api_gateway_service
 EXPOSE 5000

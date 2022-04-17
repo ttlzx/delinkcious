@@ -26,7 +26,7 @@ spec:
       serviceAccount: news-manager
       containers:
       - name: news-manager
-        image: g1g1/delinkcious-news:0.3
+        image: ttlzx/delinkcious-news:0.3
         imagePullPolicy: Always
         ports:
         - containerPort: 6060
