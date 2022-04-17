@@ -1,5 +1,3 @@
-module github.com/the-gigi/delinkcious/svc/social_graph_service
+module github.com/ttlzx/delinkcious/svc/social_graph_service
 
-go 1.17
-
-
+go 1.18

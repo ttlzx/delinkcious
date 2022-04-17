@@ -2,10 +2,11 @@ package news_manager
 
 import (
 	"errors"
-	"github.com/the-gigi/delinkcious/pkg/link_manager_events"
-	om "github.com/the-gigi/delinkcious/pkg/object_model"
 	"strconv"
 	"time"
+
+	"github.com/ttlzx/delinkcious/pkg/link_manager_events"
+	om "github.com/ttlzx/delinkcious/pkg/object_model"
 )
 
 type NewsManager struct {

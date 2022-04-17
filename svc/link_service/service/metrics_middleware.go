@@ -1,13 +1,13 @@
 package service
 
 import (
-	"github.com/prometheus/client_golang/prometheus"
-	"github.com/the-gigi/delinkcious/pkg/metrics"
-	om "github.com/the-gigi/delinkcious/pkg/object_model"
 	"strings"
 	"time"
-)
 
+	"github.com/prometheus/client_golang/prometheus"
+	"github.com/ttlzx/delinkcious/pkg/metrics"
+	om "github.com/ttlzx/delinkcious/pkg/object_model"
+)
 
 // implement function to return ServiceMiddleware
 func newMetricsMiddleware() linkManagerMiddleware {

@@ -1,13 +1,13 @@
-module github.com/the-gigi/delinkcious/svc/link_service
+module github.com/ttlzx/delinkcious/svc/link_service
 
-go 1.17
+go 1.18
 
 require (
 	github.com/go-kit/kit v0.12.0
 	github.com/gorilla/mux v1.8.0
 	github.com/opentracing/opentracing-go v1.2.0
 	github.com/prometheus/client_golang v1.11.0
-	github.com/the-gigi/delinkcious v0.0.0-20220103094143-701d7f6061e1
+	github.com/ttlzx/delinkcious v0.0.0-20220103094143-701d7f6061e1
 	github.com/uber/jaeger-client-go v2.30.0+incompatible
 )
 

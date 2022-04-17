@@ -2,13 +2,14 @@ package main
 
 import (
 	"context"
-	_ "github.com/lib/pq"
-	"github.com/the-gigi/delinkcious/pkg/db_util"
-	"github.com/the-gigi/delinkcious/pkg/link_manager_client"
-	om "github.com/the-gigi/delinkcious/pkg/object_model"
-	. "github.com/the-gigi/delinkcious/pkg/test_util"
 	"log"
 	"os"
+
+	_ "github.com/lib/pq"
+	"github.com/ttlzx/delinkcious/pkg/db_util"
+	"github.com/ttlzx/delinkcious/pkg/link_manager_client"
+	om "github.com/ttlzx/delinkcious/pkg/object_model"
+	. "github.com/ttlzx/delinkcious/pkg/test_util"
 )
 
 func initDB() {
@@ -67,7 +68,7 @@ func main() {
 	log.Print("gigi's links:", links)
 
 	err = cli.AddLink(om.AddLinkRequest{Username: "gigi",
-		Url:   "https://github.com/the-gigi",
+		Url:   "https://github.com/ttlzx",
 		Title: "Gigi on Github",
 		Tags:  map[string]bool{"programming": true}})
 	Check(err)
@@ -76,7 +77,7 @@ func main() {
 	log.Print("gigi's links:", links)
 
 	err = cli.UpdateLink(om.UpdateLinkRequest{Username: "gigi",
-		Url:         "https://github.com/the-gigi",
+		Url:         "https://github.com/ttlzx",
 		Description: "Most of my open source code is here"},
 	)
 
@@ -85,7 +86,7 @@ func main() {
 	Check(err)
 	log.Print("gigi's links:", links)
 
-	err = cli.DeleteLink("gigi", "https://github.com/the-gigi")
+	err = cli.DeleteLink("gigi", "https://github.com/ttlzx")
 	Check(err)
 	Check(err)
 	links, err = cli.GetLinks(om.GetLinksRequest{Username: "gigi"})

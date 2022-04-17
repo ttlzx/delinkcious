@@ -1,8 +1,8 @@
 FROM golang:1.11
 
-RUN go get github.com/the-gigi/delinkcious/...
+RUN go get github.com/ttlzx/delinkcious/...
 
-WORKDIR /go/src/github.com/the-gigi/delinkcious/svc/link_service
+WORKDIR /go/src/github.com/ttlzx/delinkcious/svc/link_service
 ADD ./main.go main.go
 ADD ./service service
 

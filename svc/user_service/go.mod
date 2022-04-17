@@ -1,11 +1,11 @@
-module github.com/the-gigi/delinkcious/svc/user_service
+module github.com/ttlzx/delinkcious/svc/user_service
 
-go 1.17
+go 1.18
 
 require (
 	github.com/go-kit/kit v0.12.0
 	github.com/gorilla/mux v1.8.0
-	github.com/the-gigi/delinkcious v0.0.0-20220103094143-701d7f6061e1
+	github.com/ttlzx/delinkcious v0.0.0-20220103094143-701d7f6061e1
 )
 
 require (
